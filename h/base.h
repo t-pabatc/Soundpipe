@@ -57,6 +57,7 @@ int sp_out(sp_data *sp, uint32_t chan, SPFLOAT val);
 uint32_t sp_rand(sp_data *sp);
 void sp_srand(sp_data *sp, uint32_t val);
 
+void sp_say(sp_data *sp, const char *fmt, ...);
 
 typedef struct {
     SPFLOAT *utbl;

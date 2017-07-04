@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <stdarg.h>
+
 #include "soundpipe.h"
 
 int sp_create(sp_data **spp)
@@ -208,3 +210,11 @@ void sp_srand(sp_data *sp, uint32_t val)
 }
 
 
+void sp_say(sp_data *sp, const char *fmt, ...)
+{
+    va_list args;
+    va_start(args, fmt);
+    vfprintf(stderr, fmt, args);
+    va_end(args);
+    fflush(stderr);
+}
